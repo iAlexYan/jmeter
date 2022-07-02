@@ -50,17 +50,17 @@ public class BasicCurlParserTest {
 
     @Test
     public void testFFParsing() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0' "
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0' "
                 + "-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' "
                 + "-H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'DNT: 1' "
                 + "-H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("http://jmeter.apache.org/", request.getUrl());
+        assertEquals("http://shjmeter.shjtest.com/", request.getUrl());
         assertEquals(5, request.getHeaders().size());
         assertTrue(request.isCompressed());
         assertEquals("GET", request.getMethod());
-        String resParser = "Request [compressed=true, url=http://jmeter.apache.org/, method=GET, headers=[(User-Agent,Mozilla/5.0 "
+        String resParser = "Request [compressed=true, url=http://shjmeter.shjtest.com/, method=GET, headers=[(User-Agent,Mozilla/5.0 "
                 +"(Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0), (Accept,text/html,application/xhtml+xml,"
                 + "application/xml;q=0.9,*/*;q=0.8), (Accept-Language,en-US,en;q=0.5), (DNT,1), "
                 + "(Upgrade-Insecure-Requests,1)]]";
@@ -70,7 +70,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testChromeParsing() {
-        String cmdLine = "curl 'https://jmeter.apache.org/' -H 'Proxy-Connection: keep-alive' "
+        String cmdLine = "curl 'https://shjmeter.shjtest.com/' -H 'Proxy-Connection: keep-alive' "
                 + "-H 'Proxy-Authorization: Basic XXXXXXXXX/' -H 'Upgrade-Insecure-Requests: 1' "
                 + "-H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) "
                 + "Chrome/70.0.3538.102 Mobile Safari/537.36' "
@@ -78,41 +78,41 @@ public class BasicCurlParserTest {
                 + "-H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9,fr;q=0.8' --compressed";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("https://jmeter.apache.org/", request.getUrl());
+        assertEquals("https://shjmeter.shjtest.com/", request.getUrl());
         assertEquals(7, request.getHeaders().size());
         assertTrue(request.isCompressed());
     }
 
     @Test
     public void testDoubleQuote() {
-        String cmdLine = "curl \"http://jmeter.apache.org/\"";
+        String cmdLine = "curl \"http://shjmeter.shjtest.com/\"";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("http://jmeter.apache.org/", request.getUrl());
+        assertEquals("http://shjmeter.shjtest.com/", request.getUrl());
     }
 
     @Test
     public void testBackslashAtLineEnding() {
-        String cmdLine = "curl \\\n-d 'hey' http://jmeter.apache.org/";
+        String cmdLine = "curl \\\n-d 'hey' http://shjmeter.shjtest.com/";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("http://jmeter.apache.org/", request.getUrl());
+        assertEquals("http://shjmeter.shjtest.com/", request.getUrl());
         assertEquals("hey", request.getPostData());
     }
 
     @Test
     public void testSetRequestMethodOnData() {
-        String cmdLine = "curl -X PUT -d 'hey' http://jmeter.apache.org/";
+        String cmdLine = "curl -X PUT -d 'hey' http://shjmeter.shjtest.com/";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("http://jmeter.apache.org/", request.getUrl());
+        assertEquals("http://shjmeter.shjtest.com/", request.getUrl());
         assertEquals("hey", request.getPostData());
         assertEquals("PUT", request.getMethod());
     }
 
     @Test
     public void testChromeParsingNotCompressed() {
-        String cmdLine = "curl 'https://jmeter.apache.org/' -H 'Proxy-Connection: keep-alive' "
+        String cmdLine = "curl 'https://shjmeter.shjtest.com/' -H 'Proxy-Connection: keep-alive' "
                 + "-H 'Proxy-Authorization: Basic XXXXXXXXX/' -H 'Upgrade-Insecure-Requests: 1' "
                 + "-H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko)"
                 + " Chrome/70.0.3538.102 Mobile Safari/537.36' "
@@ -120,7 +120,7 @@ public class BasicCurlParserTest {
                 + "-H 'Accept-Encoding: gzip, deflate' " + "-H 'Accept-Language: en-US,en;q=0.9,fr;q=0.8'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("https://jmeter.apache.org/", request.getUrl());
+        assertEquals("https://shjmeter.shjtest.com/", request.getUrl());
         assertEquals(7, request.getHeaders().size());
         assertFalse(request.isCompressed());
         assertEquals("GET", request.getMethod());
@@ -128,10 +128,10 @@ public class BasicCurlParserTest {
 
     @Test
     public void testChromeParsingNoHeaders() {
-        String cmdLine = "curl 'https://jmeter.apache.org/'";
+        String cmdLine = "curl 'https://shjmeter.shjtest.com/'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("https://jmeter.apache.org/", request.getUrl());
+        assertEquals("https://shjmeter.shjtest.com/", request.getUrl());
         assertTrue(request.getHeaders().isEmpty());
         assertFalse(request.isCompressed());
         assertEquals("GET", request.getMethod());
@@ -148,7 +148,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testUnbalancedQuotes() {
-        String cmdLine = "curl \"https://jmeter.apache.org/'";
+        String cmdLine = "curl \"https://shjmeter.shjtest.com/'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         assertThrows(
                 IllegalArgumentException.class,
@@ -158,7 +158,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testPost() {
-        String cmdLine = "curl 'https://jmeter.apache.org/test' -X 'POST' "
+        String cmdLine = "curl 'https://shjmeter.shjtest.com/test' -X 'POST' "
                 + "-H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0' -H 'Accept: */*' "
                 + "-H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Referer: https://www.example.com/' "
                 + "-H 'content-type: application/json;charset=UTF-8' -H 'Origin: https://www.example.com' "
@@ -166,7 +166,7 @@ public class BasicCurlParserTest {
                 + "--data '{\"abc\":\"123\",\"no\":\"matter on sunshine\"}'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        assertEquals("https://jmeter.apache.org/test", request.getUrl());
+        assertEquals("https://shjmeter.shjtest.com/test", request.getUrl());
         assertEquals(8, request.getHeaders().size());
         assertTrue(request.isCompressed());
         assertEquals("POST", request.getMethod());
@@ -176,7 +176,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testMethodPut() {
-        String cmdLine = "curl -X 'PUT' 'https://jmeter.apache.org/test' "
+        String cmdLine = "curl -X 'PUT' 'https://shjmeter.shjtest.com/test' "
                 + "-H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0' -H 'Accept: */*' "
                 + "-H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Referer: https://www.example.com/' "
                 + "-H 'content-type: application/json;charset=UTF-8' -H 'Origin: https://www.example.com' "
@@ -188,7 +188,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testError() {
-        String cmdLine = "curl 'https://jmeter.apache.org/' --error -H 'Proxy-Connection: keep-alive' "
+        String cmdLine = "curl 'https://shjmeter.shjtest.com/' --error -H 'Proxy-Connection: keep-alive' "
                 + "-H 'Proxy-Authorization: Basic XXXXXXXXX/' "
                 + "-H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko)"
                 + " Chrome/70.0.3538.102 Mobile Safari/537.36' "
@@ -202,7 +202,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testUserAgent() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -H 'User-Agent: Mozilla/5.0 (Macintosh;"
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -H 'User-Agent: Mozilla/5.0 (Macintosh;"
                 + " Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0' "
                 + "-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' "
                 + "-H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'DNT: 1' "
@@ -217,7 +217,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testConnectMax() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -H 'Connection: keep-alive' "
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -H 'Connection: keep-alive' "
                 + "-H 'Upgrade-Insecure-Requests: 1' --connect-timeout '2'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
@@ -227,7 +227,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testAuthorization() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -u 'arun:12345'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -u 'arun:12345'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("arun", request.getAuthorization().getUser());
@@ -236,7 +236,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testAuthorizationMechanismIsDigest() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -u 'arun:12345' --digest";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -u 'arun:12345' --digest";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("DIGEST", request.getAuthorization().getMechanism().toString());
@@ -244,7 +244,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testAuthMechanismIsBasic() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -u 'arun:12345' --basic";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -u 'arun:12345' --basic";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("BASIC", request.getAuthorization().getMechanism().toString());
@@ -252,7 +252,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testDefaultAuthMechanism() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -u 'arun:12345'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -u 'arun:12345'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("BASIC", request.getAuthorization().getMechanism().toString());
@@ -260,7 +260,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCacert() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --cacert 'test.pem' ";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --cacert 'test.pem' ";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("cacert", request.getCaCert(),
@@ -269,7 +269,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCapath() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --capath 'test.pem' ";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --capath 'test.pem' ";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("capath", request.getCaCert(),
@@ -278,7 +278,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCert() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -E 'test.pem' ";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -E 'test.pem' ";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("cert", request.getCaCert(),
@@ -287,7 +287,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCiphers() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --ciphers 'test.pem' ";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --ciphers 'test.pem' ";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("ciphers", request.getCaCert(),
@@ -296,7 +296,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCertStatus() {
-        String cmdLine = "curl 'http://jmeter.apache.org/'  --cert-status ";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/'  --cert-status ";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("cert-status", request.getCaCert(),
@@ -305,7 +305,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCertType() {
-        String cmdLine = "curl 'http://jmeter.apache.org/'  --cert-type 'test'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/'  --cert-type 'test'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("cert-type", request.getCaCert(),
@@ -544,7 +544,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testProxy() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -x 'https://aa:bb@example.com:8042'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -x 'https://aa:bb@example.com:8042'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("example.com", request.getProxyServer().get("servername"),
@@ -561,7 +561,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testProxyDefaultPort() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -x 'https://example.com'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -x 'https://example.com'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("1080", request.getProxyServer().get("port"),
@@ -570,7 +570,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testProxyUser() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --proxy '201.36.208.19:3128' -U 'aa:bb'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --proxy '201.36.208.19:3128' -U 'aa:bb'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("aa", request.getProxyServer().get("username"));
@@ -579,7 +579,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testProxyUriIncorrectFormat() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -x 'https://xxxx.xxx?xxx=xxx|xxxx|'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -x 'https://xxxx.xxx?xxx=xxx|xxxx|'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         assertThrows(
                 IllegalArgumentException.class,
@@ -589,7 +589,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testMaxTime() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -m '2'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -m '2'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("2000.0", String.valueOf(request.getMaxTime()));
@@ -597,7 +597,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testReferer() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --referer 'www.baidu.com'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --referer 'www.baidu.com'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertTrue(request.getHeaders().contains(Pair.of("Referer", "www.baidu.com")));
@@ -647,12 +647,12 @@ public class BasicCurlParserTest {
 
     @Test
     public void testCookieInHeader() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -H 'cookie: PHPSESSID=testphpsessid;a=b' --compressed";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -H 'cookie: PHPSESSID=testphpsessid;a=b' --compressed";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
-        List<Cookie> cookies = request.getCookieInHeaders("http://jmeter.apache.org/");
+        List<Cookie> cookies = request.getCookieInHeaders("http://shjmeter.shjtest.com/");
         Cookie c1 = new Cookie();
-        c1.setDomain("jmeter.apache.org");
+        c1.setDomain("shjmeter.shjtest.com");
         c1.setName("a");
         c1.setValue("b");
         c1.setPath("/");
@@ -662,7 +662,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testIgnoreOptions() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         List<String> listOptions = request.getOptionsIgnored();
@@ -672,7 +672,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testHead() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --head";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --head";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("HEAD", request.getMethod());
@@ -680,7 +680,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testInterface() {
-        String cmdLine = "curl 'http://jmeter.apache.org/'   --interface 'etho'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/'   --interface 'etho'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("etho", request.getInterfaceName());
@@ -688,7 +688,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testResolver() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --resolve 'moonagic.com:443:127.0.0.2'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --resolve 'moonagic.com:443:127.0.0.2'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("moonagic.com:443:127.0.0.2", request.getDnsResolver());
@@ -696,21 +696,21 @@ public class BasicCurlParserTest {
 
     @Test
     public void testLimitRate() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --limit-rate '1g'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --limit-rate '1g'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals(1024000000, request.getLimitRate());
-        cmdLine = "curl 'http://jmeter.apache.org/' --limit-rate '171k'";
+        cmdLine = "curl 'http://shjmeter.shjtest.com/' --limit-rate '171k'";
         request = basicCurlParser.parse(cmdLine);
         assertEquals(175104, request.getLimitRate());
-        cmdLine = "curl 'http://jmeter.apache.org/' --limit-rate '54M'";
+        cmdLine = "curl 'http://shjmeter.shjtest.com/' --limit-rate '54M'";
         request = basicCurlParser.parse(cmdLine);
         assertEquals(55296000, request.getLimitRate());
     }
 
     @Test
     public void testNoproxy() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --noproxy 'localhost'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --noproxy 'localhost'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertEquals("localhost", request.getNoproxy());
@@ -718,7 +718,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testConfigureInProperties() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --max-redirs 'b'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertTrue(request.getOptionsInProperties().contains("--max-redirs is in 'httpsampler.max_redirects(1062 line)'"),
@@ -727,7 +727,7 @@ public class BasicCurlParserTest {
 
     @Test
     public void testNoSupport() {
-        String cmdLine = "curl 'http://jmeter.apache.org/' -x 'https://aa:bb@example.com:8042' --proxy-ntlm";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' -x 'https://aa:bb@example.com:8042' --proxy-ntlm";
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         BasicCurlParser.Request request = basicCurlParser.parse(cmdLine);
         assertTrue(request.getOptionsNoSupport().contains("proxy-ntlm"),

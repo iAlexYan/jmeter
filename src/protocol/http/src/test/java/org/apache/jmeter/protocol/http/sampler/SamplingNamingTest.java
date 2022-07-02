@@ -32,7 +32,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class SamplingNamingTest extends JMeterTestCase implements JMeterSerialTest {
-    private static final String JMETER_HOME_PAGE = "https://jmeter.apache.org";
+    private static final String JMETER_HOME_PAGE = "https://shjmeter.shjtest.com";
     private static final String LABEL = "JMeter-HP";
     private String implementation;
 

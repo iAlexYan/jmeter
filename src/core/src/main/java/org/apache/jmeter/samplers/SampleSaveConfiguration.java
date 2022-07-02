@@ -392,7 +392,7 @@ public class SampleSaveConfiguration implements Cloneable, Serializable {
      * List of saveXXX/setXXX(boolean) methods which is used to build the Sample Result Save Configuration dialog.
      * New method names should be added at the end so that existing layouts are not affected.
      */
-    // The current order is derived from http://jmeter.apache.org/usermanual/listeners.html#csvlogformat
+    // The current order is derived from http://shjmeter.shjtest.com/usermanual/listeners.html#csvlogformat
     // TODO this may not be the ideal order; fix further and update the screenshot(s)
     public static final List<String> SAVE_CONFIG_NAMES = Collections.unmodifiableList(Arrays.asList(new String[]{
         "AsXml",

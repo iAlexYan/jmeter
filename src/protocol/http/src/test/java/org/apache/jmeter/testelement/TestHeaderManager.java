@@ -29,10 +29,10 @@ public class TestHeaderManager extends JMeterTestCase {
     @Test
     public void testReplace() throws Exception {
         HeaderManager headerManager = new HeaderManager();
-        headerManager.add(new Header("Referer", "https://jmeter.apache.org/changes.html"));
+        headerManager.add(new Header("Referer", "https://shjmeter.shjtest.com/changes.html"));
         headerManager.add(new Header("JSESSIONID", "AZAZDZDAFEFZEVZEZEVZEVZEVZZ"));
 
-        int numberOfReplacements = headerManager.replace("jmeter.apache.org", "${host}", true);
+        int numberOfReplacements = headerManager.replace("shjmeter.shjtest.com", "${host}", true);
 
         assertEquals(1, numberOfReplacements);
         assertEquals("Referer", headerManager.getHeader(0).getName());
@@ -41,10 +41,10 @@ public class TestHeaderManager extends JMeterTestCase {
         assertEquals("AZAZDZDAFEFZEVZEZEVZEVZEVZZ", headerManager.getHeader(1).getValue());
 
         headerManager = new HeaderManager();
-        headerManager.add(new Header("Referer", "https://JMeter.apache.org/changes.html"));
+        headerManager.add(new Header("Referer", "https://shjmeter.shjtest.com/changes.html"));
         headerManager.add(new Header("JSESSIONID", "AZAZDZDAFEFZEVZEZEVZEVZEVZZ"));
 
-        numberOfReplacements = headerManager.replace("jmeter.apache.org", "${host}", false);
+        numberOfReplacements = headerManager.replace("shjmeter.shjtest.com", "${host}", false);
 
         assertEquals(1, numberOfReplacements);
         assertEquals("Referer", headerManager.getHeader(0).getName());
@@ -56,19 +56,19 @@ public class TestHeaderManager extends JMeterTestCase {
     @Test
     public void testReplaceNoMatch() throws Exception {
         HeaderManager headerManager = new HeaderManager();
-        headerManager.add(new Header("Referer", "https://jmeter.apache.org/changes.html"));
+        headerManager.add(new Header("Referer", "https://shjmeter.shjtest.com/changes.html"));
         headerManager.add(new Header("JSESSIONID", "AZAZDZDAFEFZEVZEZEVZEVZEVZZ"));
 
-        int numberOfReplacements = headerManager.replace("JMeter.apache.org", "${host}", true);
+        int numberOfReplacements = headerManager.replace("shjmeter.shjtest.com", "${host}", true);
 
         assertEquals(0, numberOfReplacements);
         assertEquals("Referer", headerManager.getHeader(0).getName());
         assertEquals("JSESSIONID", headerManager.getHeader(1).getName());
-        assertEquals("https://jmeter.apache.org/changes.html", headerManager.getHeader(0).getValue());
+        assertEquals("https://shjmeter.shjtest.com/changes.html", headerManager.getHeader(0).getValue());
         assertEquals("AZAZDZDAFEFZEVZEZEVZEVZEVZZ", headerManager.getHeader(1).getValue());
 
         headerManager = new HeaderManager();
-        headerManager.add(new Header("Referer", "https://jmeter.apache.org/changes.html"));
+        headerManager.add(new Header("Referer", "https://shjmeter.shjtest.com/changes.html"));
         headerManager.add(new Header("JSESSIONID", "AZAZDZDAFEFZEVZEZEVZEVZEVZZ"));
 
         numberOfReplacements = headerManager.replace("JMeterx.apache.org", "${host}", false);
@@ -76,7 +76,7 @@ public class TestHeaderManager extends JMeterTestCase {
         assertEquals(0, numberOfReplacements);
         assertEquals("Referer", headerManager.getHeader(0).getName());
         assertEquals("JSESSIONID", headerManager.getHeader(1).getName());
-        assertEquals("https://jmeter.apache.org/changes.html", headerManager.getHeader(0).getValue());
+        assertEquals("https://shjmeter.shjtest.com/changes.html", headerManager.getHeader(0).getValue());
         assertEquals("AZAZDZDAFEFZEVZEZEVZEVZEVZZ", headerManager.getHeader(1).getValue());
     }
 }

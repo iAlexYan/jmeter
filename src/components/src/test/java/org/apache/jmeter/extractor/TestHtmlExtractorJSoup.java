@@ -55,8 +55,8 @@ public class TestHtmlExtractorJSoup {
 
     @Test
     public void testProcessAllElementsSingleMatch() {
-        vars.put("content", "<p><a href='http://jmeter.apache.org/'>Link1</a>"
-                + "<a class='mylink' href='http://jmeter.apache.org/'>Link2</a></p>"
+        vars.put("content", "<p><a href='http://shjmeter.shjtest.com/'>Link1</a>"
+                + "<a class='mylink' href='http://shjmeter.shjtest.com/'>Link2</a></p>"
                 );
         extractor.setMatchNumber(-1);
         extractor.setRefName("varname");
@@ -66,14 +66,14 @@ public class TestHtmlExtractorJSoup {
         extractor.setThreadContext(jmctx);
         extractor.process();
         assertThat(vars.get("varname"), CoreMatchers.is(CoreMatchers.nullValue()));
-        assertThat(vars.get("varname_1"), CoreMatchers.is("http://jmeter.apache.org/"));
+        assertThat(vars.get("varname_1"), CoreMatchers.is("http://shjmeter.shjtest.com/"));
         assertThat(vars.get("varname_matchNr"), CoreMatchers.is("1"));
     }
 
     @Test
     public void testProcessAllElementsMultipleMatches() {
         vars.put("content", "<p><a href='http://www.apache.org/'>Link1</a>"
-                + "<a class='mylink' href='http://jmeter.apache.org/'>Link2</a></p>"
+                + "<a class='mylink' href='http://shjmeter.shjtest.com/'>Link2</a></p>"
                 );
         extractor.setMatchNumber(-1);
         extractor.setRefName("varname");
@@ -84,7 +84,7 @@ public class TestHtmlExtractorJSoup {
         extractor.process();
         assertThat(vars.get("varname"), CoreMatchers.is(CoreMatchers.nullValue()));
         assertThat(vars.get("varname_1"), CoreMatchers.is("http://www.apache.org/"));
-        assertThat(vars.get("varname_2"), CoreMatchers.is("http://jmeter.apache.org/"));
+        assertThat(vars.get("varname_2"), CoreMatchers.is("http://shjmeter.shjtest.com/"));
         assertThat(vars.get("varname_matchNr"), CoreMatchers.is("2"));
     }
 

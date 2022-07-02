@@ -63,21 +63,21 @@ public class ParseCurlCommandActionTest {
 
     @Test
     public void testCreateCommentText() {
-        testCommentText("curl 'http://jmeter.apache.org/' --max-redirs 'b'",
+        testCommentText("curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'",
                 "--max-redirs is in 'httpsampler.max_redirects(1062 line)' configure in jmeter.properties");
 
-        testCommentText("curl 'http://jmeter.apache.org/' --include --keepalive-time '20'",
+        testCommentText("curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'",
                 "--include --keepalive-time ignoring;");
 
-        testCommentText("curl 'http://jmeter.apache.org/' -x 'https://aa:bb@example.com:8042' --proxy-ntlm",
+        testCommentText("curl 'http://shjmeter.shjtest.com/' -x 'https://aa:bb@example.com:8042' --proxy-ntlm",
                 "--proxy-ntlm not supported;");
-        testCommentText("curl 'http://jmeter.apache.org/' --include --keepalive-time '20'",
+        testCommentText("curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'",
                 "--include --keepalive-time ignoring;");
-        testCommentText("curl 'http://jmeter.apache.org/'", "");
+        testCommentText("curl 'http://shjmeter.shjtest.com/'", "");
 
-        testCommentTextStartsWith("curl 'http://jmeter.apache.org/' --limit-rate '54M'", "Please configure the limit rate in 'httpclient.socket.http.cps'");
-        testCommentTextStartsWith("curl 'http://jmeter.apache.org/' --noproxy ' localhost'", "Please configure noproxy list in terminal and restart JMeter.");
-        testCommentTextStartsWith("curl 'http://jmeter.apache.org/' --cacert '<CA certificate>'", "Please configure the SSL file with CA certificates");
+        testCommentTextStartsWith("curl 'http://shjmeter.shjtest.com/' --limit-rate '54M'", "Please configure the limit rate in 'httpclient.socket.http.cps'");
+        testCommentTextStartsWith("curl 'http://shjmeter.shjtest.com/' --noproxy ' localhost'", "Please configure noproxy list in terminal and restart JMeter.");
+        testCommentTextStartsWith("curl 'http://shjmeter.shjtest.com/' --cacert '<CA certificate>'", "Please configure the SSL file with CA certificates");
     }
 
     private void testCommentTextStartsWith(String cmdLine, String expectedComment) {
@@ -99,26 +99,26 @@ public class ParseCurlCommandActionTest {
     @Test
     public void testReadCurlCommandsFromTextPanel() {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
-        String cmdLine = "curl 'http://jmeter.apache.org/' --max-redirs 'b' "
-                + "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redirs 'b' "
+                + "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         List<String> commands = p.readFromTextPanel(cmdLine);
-        assertTrue(commands.contains("curl 'http://jmeter.apache.org/' --max-redirs 'b'"),
+        assertTrue(commands.contains("curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'"),
                 "Curl commands should be saved in list");
-        assertTrue(commands.contains("curl 'http://jmeter.apache.org/' --include --keepalive-time '20'"),
+        assertTrue(commands.contains("curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'"),
                 "Curl commands should be saved in list");
         assertEquals(2, commands.size());
     }
 
     @Test
     public void testReadCurlCommandsFromFile(@TempDir Path tempDir) throws Exception {
-        String cmdLine = "curl 'http://jmeter.apache.org/' --max-redirs 'b'" + System.lineSeparator()
-                + "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'" + System.lineSeparator()
+                + "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         String tempPath = writeToTempFile(tempDir, cmdLine);
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         List<String> commands = p.readFromFile(tempPath);
-        assertTrue(commands.contains("curl 'http://jmeter.apache.org/' --max-redirs 'b'"),
+        assertTrue(commands.contains("curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'"),
                 "Curl commands should be saved in list");
-        assertTrue(commands.contains("curl 'http://jmeter.apache.org/' --include --keepalive-time '20'"),
+        assertTrue(commands.contains("curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'"),
                 "Curl commands should be saved in list");
         assertEquals(2, commands.size());
     }
@@ -133,21 +133,21 @@ public class ParseCurlCommandActionTest {
     public void testParseCommands() {
         // commands from textpanel
         ParseCurlCommandAction p = new ParseCurlCommandAction();
-        String cmdLine = "curl 'http://jmeter.apache.org/' --max-redirs 'b' "
-                + "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redirs 'b' "
+                + "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         List<String> commands = p.readFromTextPanel(cmdLine);
         List<Request> requests = p.parseCommands(false, commands);
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request1 = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --max-redirs 'b'");
+        Request request1 = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'");
         assertEquals(request1.toString(), requests.get(0).toString());
         assertEquals(2, requests.size());
 
         // commands from file
-        cmdLine = "curl 'http://jmeter.apache.org/' --max-redirs 'b'" + System.lineSeparator()
-                + "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'" + System.lineSeparator()
+                + "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         commands = p.readFromTextPanel(cmdLine);
         requests = p.parseCommands(true, commands);
-        request1 = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --max-redirs 'b'");
+        request1 = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --max-redirs 'b'");
         assertEquals(request1.toString(), requests.get(0).toString(), "The command line should be parsed in turn");
         assertEquals(2, requests.size());
     }
@@ -155,8 +155,8 @@ public class ParseCurlCommandActionTest {
     @Test
     public void testParseCommandsException() {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
-        String cmdLine = "curl 'http://jmeter.apache.org/' --max-redir 'b' "
-                + "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redir 'b' "
+                + "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         List<String> commands = p.readFromTextPanel(cmdLine);
         assertThrowsIllegalArgument(() -> p.parseCommands(false, commands));
     }
@@ -168,8 +168,8 @@ public class ParseCurlCommandActionTest {
     @Test
     public void testParseCommandsException2() {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
-        String cmdLine = "curl 'http://jmeter.apache.org/' --max-redir 'b'" + System.lineSeparator()
-                + "curl 'http://jmeter.apache.org/' --include --keepalive-time '20'";
+        String cmdLine = "curl 'http://shjmeter.shjtest.com/' --max-redir 'b'" + System.lineSeparator()
+                + "curl 'http://shjmeter.shjtest.com/' --include --keepalive-time '20'";
         List<String> commands = p.readFromTextPanel(cmdLine);
         assertThrowsIllegalArgument(() -> p.parseCommands(true, commands));
     }
@@ -182,7 +182,7 @@ public class ParseCurlCommandActionTest {
         httpSampler.setProperty(TestElement.GUI_CLASS, HttpTestSampleGui.class.getName());
         httpSampler.setProperty(TestElement.NAME, "HTTP Request");
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -x 'https://aa:bb@example.com:8042'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -x 'https://aa:bb@example.com:8042'");
         Method method = getMethodFor("createProxyServer", Request.class, HTTPSamplerProxy.class);
         method.invoke(p, request, httpSampler);
         assertEquals("example.com", httpSampler.getProxyHost(), "proxy host should be set in httpsampler");
@@ -198,19 +198,19 @@ public class ParseCurlCommandActionTest {
         // test proxy in httpsampler
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org:8443/' -x 'https://aa:bb@example.com:8042'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com:8443/' -x 'https://aa:bb@example.com:8042'");
         Method method = getMethodFor("createSampler", Request.class, String.class);
         HTTPSamplerProxy httpSampler = (HTTPSamplerProxy) method.invoke(p, request, "");
         assertEquals("https", httpSampler.getProxyScheme(), "proxy scheme should be set in httpsampler");
         assertEquals("example.com", httpSampler.getProxyHost(), "proxy host should be set in httpsampler");
         assertEquals(8042, httpSampler.getProxyPortInt(), "The command line should be parsed in turn");
         assertEquals("/", httpSampler.getPath(), "path should be set in httpsampler");
-        assertEquals("jmeter.apache.org", httpSampler.getDomain(), "domain should be set in httpsampler");
+        assertEquals("shjmeter.shjtest.com", httpSampler.getDomain(), "domain should be set in httpsampler");
         assertEquals(8443, httpSampler.getPort(), "port should be set in httpsampler");
         assertEquals("GET", httpSampler.getMethod(), "method should be set in httpsampler");
 
         // test post data in httpsampler
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --data 'name=test'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --data 'name=test'");
         request.setInterfaceName("interface_name");
         httpSampler = (HTTPSamplerProxy) method.invoke(p, request, "");
         assertEquals("POST", httpSampler.getMethod());
@@ -218,7 +218,7 @@ public class ParseCurlCommandActionTest {
 
         // test form data in httpsampler(upload data)
         request = basicCurlParser
-                .parse("curl 'http://jmeter.apache.org/' -F 'test=name;type=text/foo' -F 'test1=name1'");
+                .parse("curl 'http://shjmeter.shjtest.com/' -F 'test=name;type=text/foo' -F 'test1=name1'");
         httpSampler = (HTTPSamplerProxy) method.invoke(p, request, "");
         Arguments samplerArguments = httpSampler.getArguments();
         assertEquals("POST", httpSampler.getMethod(), "method should be set in httpsampler");
@@ -230,14 +230,14 @@ public class ParseCurlCommandActionTest {
         // test form data in httpsampler(upload file)
         String filePath = tempDir.resolve("test.txt").toAbsolutePath().toString();
         request = basicCurlParser.parse(
-                "curl 'http://jmeter.apache.org/' -F 'c=@" + filePath + ";type=text/foo' -F 'c1=@" + filePath + "'");
+                "curl 'http://shjmeter.shjtest.com/' -F 'c=@" + filePath + ";type=text/foo' -F 'c1=@" + filePath + "'");
         httpSampler = (HTTPSamplerProxy) method.invoke(p, request, "");
         assertEquals("c", httpSampler.getHTTPFiles()[0].getParamName(), "form name should be set in httpsampler");
         assertEquals(filePath, httpSampler.getHTTPFiles()[0].getPath(), "form name should be set in httpsampler");
         assertEquals("c1", httpSampler.getHTTPFiles()[1].getParamName(), "form name should be set in httpsampler");
 
         // test form data in httpsampler
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --form-string 'c=@test.txt;type=text/foo'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --form-string 'c=@test.txt;type=text/foo'");
         httpSampler = (HTTPSamplerProxy) method.invoke(p, request, "");
         assertEquals("c", httpSampler.getArguments().getArgument(0).getName());
         assertEquals("@test.txt;type=text/foo", httpSampler.getArguments().getArgument(0).getValue());
@@ -264,7 +264,7 @@ public class ParseCurlCommandActionTest {
         httpSampler.setProperty(TestElement.NAME, "HTTP Request");
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         Request request = basicCurlParser
-                .parse("curl 'http://jmeter.apache.org/' -F 'test=name' --data 'fname=a&lname=b'");
+                .parse("curl 'http://shjmeter.shjtest.com/' -F 'test=name' --data 'fname=a&lname=b'");
         Method method = getMethodFor("setFormData", Request.class, HTTPSamplerProxy.class);
         try {
             method.invoke(p, request, httpSampler);
@@ -283,11 +283,11 @@ public class ParseCurlCommandActionTest {
         HashTree tree = new HashTree();
         HashTree testPlanHT = tree.add(testPlan);
         HashTree threadGroupHT = testPlanHT.add(threadGroup);
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/'  -E '<CA certificate>'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/'  -E '<CA certificate>'");
         Method method = getMethodFor("createHttpRequest", Request.class, HashTree.class, String.class);
         HTTPSamplerProxy httpSampler = (HTTPSamplerProxy) method.invoke(p, request, threadGroupHT, "comment");
         assertEquals("/", httpSampler.getPath(), "path should be set in httpsampler");
-        assertEquals("jmeter.apache.org", httpSampler.getDomain(), "domain should be set in httpsampler");
+        assertEquals("shjmeter.shjtest.com", httpSampler.getDomain(), "domain should be set in httpsampler");
         assertEquals(80, httpSampler.getPort(), "port should be 80 in httpsampler");
         assertEquals("GET", httpSampler.getMethod(), "method should be set in httpsampler");
     }
@@ -301,11 +301,11 @@ public class ParseCurlCommandActionTest {
         HashTree tree = new HashTree();
         HashTree testPlanHT = tree.add(testPlan);
         HashTree threadGroupHT = testPlanHT.add(threadGroup);
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -X POST --form 'pic=@\"/some/file.jpg\"'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -X POST --form 'pic=@\"/some/file.jpg\"'");
         Method method = getMethodFor("createHttpRequest", Request.class, HashTree.class, String.class);
         HTTPSamplerProxy httpSampler = (HTTPSamplerProxy) method.invoke(p, request, threadGroupHT, "comment");
         assertEquals("/", httpSampler.getPath(), "path should be set in httpsampler");
-        assertEquals("jmeter.apache.org", httpSampler.getDomain(), "domain should be set in httpsampler");
+        assertEquals("shjmeter.shjtest.com", httpSampler.getDomain(), "domain should be set in httpsampler");
         assertEquals(80, httpSampler.getPort(), "port should be 80 in httpsampler");
         assertEquals("POST", httpSampler.getMethod(), "method should be set in httpsampler");
         HTTPFileArg fileArg = httpSampler.getHTTPFiles()[0];
@@ -318,7 +318,7 @@ public class ParseCurlCommandActionTest {
     public void testConfigureTimeout() throws Exception {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/'  -m '20'  --connect-timeout '1'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/'  -m '20'  --connect-timeout '1'");
         HTTPSamplerProxy httpSampler = (HTTPSamplerProxy) HTTPSamplerFactory
                 .newInstance(HTTPSamplerFactory.DEFAULT_CLASSNAME);
         httpSampler.setProperty(TestElement.GUI_CLASS, HttpTestSampleGui.class.getName());
@@ -334,7 +334,7 @@ public class ParseCurlCommandActionTest {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         Request request = basicCurlParser.parse(
-                "curl 'http://jmeter.apache.org/' -H 'Content-Type: application/x-www-form-urlencoded' --compressed");
+                "curl 'http://shjmeter.shjtest.com/' -H 'Content-Type: application/x-www-form-urlencoded' --compressed");
         Method method = getMethodFor("createHeaderManager", Request.class);
         HeaderManager headerManager = (HeaderManager) method.invoke(p, request);
         // The following headers should be set in the HeaderManager
@@ -349,7 +349,7 @@ public class ParseCurlCommandActionTest {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         AuthManager authManager = new AuthManager();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -u 'user:passwd'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -u 'user:passwd'");
         Method method = getMethodFor("createAuthManager", Request.class, AuthManager.class);
         method.invoke(p, request, authManager);
         assertEquals("user", authManager.get(0).getUser());
@@ -363,15 +363,15 @@ public class ParseCurlCommandActionTest {
         Authorization authorization = new Authorization();
         authorization.setPass("passwd");
         authorization.setUser("user");
-        authorization.setURL("http://jmeter.apache.org/");
+        authorization.setURL("http://shjmeter.shjtest.com/");
         authorization.setMechanism(Mechanism.BASIC);
         authManager.addAuth(authorization);
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -u 'user:passwd'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -u 'user:passwd'");
         Method method = getMethodFor("canAddAuthManagerInHttpRequest", Request.class, AuthManager.class);
         assertFalse((boolean) method.invoke(p, request, authManager),
                 "When AuthManager contains this authorization, shouldn't add a AuthManager in Http Request");
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -u 'user1:passwd1'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -u 'user1:passwd1'");
         assertTrue((boolean) method.invoke(p, request, authManager),
                 "When AuthManager contains this url, but the username or password isn't the same,"
                         + "should add a AuthManager in Http Request");
@@ -384,11 +384,11 @@ public class ParseCurlCommandActionTest {
         Authorization authorization = new Authorization();
         authorization.setPass("passwd");
         authorization.setUser("user");
-        authorization.setURL("http://jmeter.apache.org/");
+        authorization.setURL("http://shjmeter.shjtest.com/");
         authorization.setMechanism(Mechanism.BASIC);
         authManager.addAuth(authorization);
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -u 'user:passwd'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -u 'user:passwd'");
         Method method = getMethodFor("canUpdateAuthManagerInThreadGroup", Request.class, AuthManager.class);
         assertFalse((boolean) method.invoke(p, request, authManager),
                 "When AuthManager contains this url, shouldn't add a AuthManager in ThreadGroup");
@@ -402,10 +402,10 @@ public class ParseCurlCommandActionTest {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         CookieManager cookieManager = new CookieManager();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -b 'name=Tom'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -b 'name=Tom'");
         Method method = getMethodFor("createCookieManager", CookieManager.class, Request.class);
         method.invoke(p, cookieManager, request);
-        assertEquals("jmeter.apache.org", cookieManager.get(0).getDomain(),
+        assertEquals("shjmeter.shjtest.com", cookieManager.get(0).getDomain(),
                 "the domain of cookie should be set in cookieManager");
         assertEquals("/", cookieManager.get(0).getPath(), "the path of cookie should be set in cookieManager");
         assertEquals("name", cookieManager.get(0).getName(), "the name of cookie should be set in cookieManager");
@@ -414,9 +414,9 @@ public class ParseCurlCommandActionTest {
         cookieManager = new CookieManager();
         String filepath = tempDir.resolve("test.txt").toAbsolutePath().toString();
         assertTrue(tempDir.resolve("test.txt").toFile().createNewFile());
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -b '" + filepath + "'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -b '" + filepath + "'");
         method.invoke(p, cookieManager, request);
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' -b 'test1.txt'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' -b 'test1.txt'");
         try {
             method.invoke(p, cookieManager, request);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
@@ -433,7 +433,7 @@ public class ParseCurlCommandActionTest {
         CookieManager cookieManager = new CookieManager();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         Request request = basicCurlParser
-                .parse("curl 'http://jmeter.apache.org/' -H 'cookie: PHPSESSID=testphpsessid;a=b' --compressed");
+                .parse("curl 'http://shjmeter.shjtest.com/' -H 'cookie: PHPSESSID=testphpsessid;a=b' --compressed");
         Field f = ParseCurlCommandAction.class.getDeclaredField("uploadCookiesCheckBox");
         f.setAccessible(true);
         JCheckBox uploadCookiesCheckBox = new JCheckBox(
@@ -441,7 +441,7 @@ public class ParseCurlCommandActionTest {
         f.set(p, uploadCookiesCheckBox);
         Method method = getMethodFor("createCookieManager", CookieManager.class, Request.class);
         method.invoke(p, cookieManager, request);
-        assertEquals("jmeter.apache.org", cookieManager.get(0).getDomain(), "the domain of cookie should be set in cookieManager");
+        assertEquals("shjmeter.shjtest.com", cookieManager.get(0).getDomain(), "the domain of cookie should be set in cookieManager");
         assertEquals("/", cookieManager.get(0).getPath(), "the path of cookie should be set in cookieManager");
         assertEquals("a", cookieManager.get(0).getName(), "the name of cookie should be set in cookieManager");
         assertEquals("b", cookieManager.get(0).getValue(), "the password of cookie should be set in cookieManager");
@@ -460,7 +460,7 @@ public class ParseCurlCommandActionTest {
         ParseCurlCommandAction p = new ParseCurlCommandAction();
         DNSCacheManager dnsCacheManager = new DNSCacheManager();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --dns-servers '0.0.0.0'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --dns-servers '0.0.0.0'");
         Method method = getMethodFor("createDnsServer", Request.class, DNSCacheManager.class);
         method.invoke(p, request, dnsCacheManager);
         assertEquals("0.0.0.0", dnsCacheManager.getServers().get(0).getStringValue(),
@@ -473,11 +473,11 @@ public class ParseCurlCommandActionTest {
         DNSCacheManager dnsCacheManager = new DNSCacheManager();
         dnsCacheManager.addServer("0.0.0.0");
         BasicCurlParser basicCurlParser = new BasicCurlParser();
-        Request request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --dns-servers '0.0.0.0'");
+        Request request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --dns-servers '0.0.0.0'");
         Method method = getMethodFor("canAddDnsServerInHttpRequest", Request.class, DNSCacheManager.class);
         assertFalse((boolean) method.invoke(p, request, dnsCacheManager),
                 "When the Dns servers are  the same, shouldn't add the DnsCacheManager in Http Request");
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/' --dns-servers '1.1.1.1'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/' --dns-servers '1.1.1.1'");
         assertTrue((boolean) method.invoke(p, request, dnsCacheManager),
                 "When the Dns servers aren't the same, should add the DnsCacheManager in Http Request");
     }
@@ -488,11 +488,11 @@ public class ParseCurlCommandActionTest {
         DNSCacheManager dnsCacheManager = new DNSCacheManager();
         BasicCurlParser basicCurlParser = new BasicCurlParser();
         Request request = basicCurlParser
-                .parse("curl 'http://jmeter.apache.org/'  --resolve 'moonagic.com:443:127.0.0.2'");
+                .parse("curl 'http://shjmeter.shjtest.com/'  --resolve 'moonagic.com:443:127.0.0.2'");
         Method method = getMethodFor("createDnsResolver", Request.class, DNSCacheManager.class);
         method.invoke(p, request, dnsCacheManager);
         assertEquals("StaticHost(moonagic.com, 127.0.0.2)", dnsCacheManager.getHosts().get(0).getStringValue());
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/'  --resolve 'moonagic.com:9090:127.0.0.2'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/'  --resolve 'moonagic.com:9090:127.0.0.2'");
         method.invoke(p, request, dnsCacheManager);
         assertEquals("StaticHost(moonagic.com, 127.0.0.2)", dnsCacheManager.getHosts().get(0).getStringValue(),
                 "the dns resolver should be set in DNSCacheManager");
@@ -508,7 +508,7 @@ public class ParseCurlCommandActionTest {
         dnsCacheManager.addHost("moonagic.com", "127.0.0.2");
 
         Request request = basicCurlParser
-                .parse("curl 'http://jmeter.apache.org/'  --resolve 'moonagic.com:443:127.0.0.2'");
+                .parse("curl 'http://shjmeter.shjtest.com/'  --resolve 'moonagic.com:443:127.0.0.2'");
         Method method = getMethodFor("canAddDnsResolverInHttpRequest", Request.class, DNSCacheManager.class);
         dnsCacheManager = new DNSCacheManager();
         dnsCacheManager.addHost("moonagic.com", "127.0.0.2");
@@ -516,7 +516,7 @@ public class ParseCurlCommandActionTest {
         assertFalse((boolean) method.invoke(p, request, dnsCacheManager),
                 "When the Dns servers are the same, shouldn't add the DnsCacheManager in Http Request");
 
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/'  --resolve 'moonagic.com:9090:127.0.0.1'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/'  --resolve 'moonagic.com:9090:127.0.0.1'");
         method.invoke(p, request, dnsCacheManager);
         assertTrue((boolean) method.invoke(p, request, dnsCacheManager),
                 "When the Dns servers aren't the same, should add the DnsCacheManager in Http Request");
@@ -527,7 +527,7 @@ public class ParseCurlCommandActionTest {
         assertTrue((boolean) method.invoke(p, request, dnsCacheManager),
                 "When the Dns servers aren't the same, should add the DnsCacheManager in Http Request");
 
-        request = basicCurlParser.parse("curl 'http://jmeter.apache.org/'  --resolve 'moonagic.com:9090:127.0.0.1'");
+        request = basicCurlParser.parse("curl 'http://shjmeter.shjtest.com/'  --resolve 'moonagic.com:9090:127.0.0.1'");
         method.invoke(p, request, dnsCacheManager);
         assertTrue((boolean) method.invoke(p, request, dnsCacheManager),
                 "When the Dns servers aren't the same, should add the DnsCacheManager in Http Request");

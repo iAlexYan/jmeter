@@ -39,8 +39,8 @@
         </p>
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/jmeter_proxy_step_by_step.pdf" >http://jmeter.apache.org/usermanual/jmeter_proxy_step_by_step.pdf</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Proxy_Server" >http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Proxy_Server</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/jmeter_proxy_step_by_step.pdf" >http://shjmeter.shjtest.com/usermanual/jmeter_proxy_step_by_step.pdf</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Proxy_Server" >http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Proxy_Server</a></li>
             </ul>
         ]]></description>
         <parameters>
@@ -67,8 +67,8 @@
         </p>
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/jmeter_proxy_step_by_step.pdf" >http://jmeter.apache.org/usermanual/jmeter_proxy_step_by_step.pdf</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Proxy_Server" >http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Proxy_Server</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/jmeter_proxy_step_by_step.pdf" >http://shjmeter.shjtest.com/usermanual/jmeter_proxy_step_by_step.pdf</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Proxy_Server" >http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Proxy_Server</a></li>
             </ul>
         ]]></description>
     </template>
@@ -85,7 +85,7 @@
             </ul>
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/build-db-test-plan.html" >http://jmeter.apache.org/usermanual/build-db-test-plan.html</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/build-db-test-plan.html" >http://shjmeter.shjtest.com/usermanual/build-db-test-plan.html</a></li>
             </ul>
         ]]></description>
     </template>
@@ -100,7 +100,7 @@
         Please select a suitable location in the tree before merging.
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#JSR223_Sampler" >JSR223 Sampler</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#JSR223_Sampler" >JSR223 Sampler</a></li>
                 <li><a href="http://groovy-lang.org/documentation.html" >Apache Groovy</a></li>
             </ul>
         ]]></description>
@@ -116,7 +116,7 @@
         Please select a suitable location in the tree before merging.
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#BeanShell_Sampler" >http://jmeter.apache.org/usermanual/component_reference.html#BeanShell_Sampler</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#BeanShell_Sampler" >http://shjmeter.shjtest.com/usermanual/component_reference.html#BeanShell_Sampler</a></li>
             </ul>
         ]]></description>
     </template>
@@ -139,7 +139,7 @@
         <h2>Useful links</h2>
             <ul>
                 <li><a href="http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-java-driver/#getting-started-with-java-driver" >Getting Started with Java Driver (<i>Making a connection</i> part is already done by MongoDB Source Config)</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#MongoDB_Source_Config" >http://jmeter.apache.org/usermanual/component_reference.html#MongoDB_Source_Config</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#MongoDB_Source_Config" >http://shjmeter.shjtest.com/usermanual/component_reference.html#MongoDB_Source_Config</a></li>
             </ul>
         ]]></description>
     </template>
@@ -150,7 +150,7 @@
         <h1>Test plan from Building a Web Test Plan section in user's manual</h1>
         <h2>Useful link</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/build-web-test-plan.html" >http://jmeter.apache.org/usermanual/build-web-test-plan.html</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/build-web-test-plan.html" >http://shjmeter.shjtest.com/usermanual/build-web-test-plan.html</a></li>
             </ul>
         ]]></description>
     </template>
@@ -163,9 +163,9 @@
 		<p>This template of Test Plan contains first step when starting creating JMeter script</p>
         <h2>Useful links</h2>
             <ul>
-                <li><a href="https://jmeter.apache.org/usermanual/test_plan.html" >https://jmeter.apache.org/usermanual/test_plan.html</a></li>
-				<li><a href="https://jmeter.apache.org/usermanual/listeners.html" >https://jmeter.apache.org/usermanual/listeners.html</a></li>
-				<li><a href="https://jmeter.apache.org/usermanual/component_reference.html#View_Results_Tree" >https://jmeter.apache.org/usermanual/component_reference.html#View_Results_Tree</a></li>
+                <li><a href="https://shjmeter.shjtest.com/usermanual/test_plan.html" >https://shjmeter.shjtest.com/usermanual/test_plan.html</a></li>
+				<li><a href="https://shjmeter.shjtest.com/usermanual/listeners.html" >https://shjmeter.shjtest.com/usermanual/listeners.html</a></li>
+				<li><a href="https://shjmeter.shjtest.com/usermanual/component_reference.html#View_Results_Tree" >https://shjmeter.shjtest.com/usermanual/component_reference.html#View_Results_Tree</a></li>
 
             </ul>
         ]]></description>
@@ -183,7 +183,7 @@
         </p>
         <h2>Useful link</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/build-adv-web-test-plan.html" >http://jmeter.apache.org/usermanual/build-adv-web-test-plan.html</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/build-adv-web-test-plan.html" >http://shjmeter.shjtest.com/usermanual/build-adv-web-test-plan.html</a></li>
             </ul>
         ]]></description>
     </template>
@@ -194,11 +194,11 @@
         <h1>Test plan showing how to create a SOAP Webservice Test Plan </h1>
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#User_Defined_Variables" >User Defined Variables</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Request_Defaults" >User Defined Variables</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Request" >HTTP Request</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#Response_Assertion">Response Assertion</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Header_Manager">HTTP Header Manager</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#User_Defined_Variables" >User Defined Variables</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Request_Defaults" >User Defined Variables</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Request" >HTTP Request</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#Response_Assertion">Response Assertion</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP_Header_Manager">HTTP Header Manager</a></li>
             </ul>
         ]]></description>
     </template>
@@ -209,7 +209,7 @@
         <h1>Test plan from Building an FTP Test Plan section in user's manual</h1>
         <h2>Useful link</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/build-ftp-test-plan.html" >http://jmeter.apache.org/usermanual/build-ftp-test-plan.html</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/build-ftp-test-plan.html" >http://shjmeter.shjtest.com/usermanual/build-ftp-test-plan.html</a></li>
             </ul>
         ]]></description>
     </template>
@@ -220,7 +220,7 @@
         <h1>Test plan from Building an LDAP Test Plan section in user's manual</h1>
         <h2>Useful link</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/build-ldap-test-plan.html" >http://jmeter.apache.org/usermanual/build-ldap-test-plan.html</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/build-ldap-test-plan.html" >http://shjmeter.shjtest.com/usermanual/build-ldap-test-plan.html</a></li>
             </ul>
         ]]></description>
     </template>
@@ -231,7 +231,7 @@
         <h1>Test plan from Building an Extended LDAP Test Plan section in user's manual</h1>
         <h2>Useful link</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/build-ldapext-test-plan.html" >http://jmeter.apache.org/usermanual/build-ldapext-test-plan.html</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/build-ldapext-test-plan.html" >http://shjmeter.shjtest.com/usermanual/build-ldapext-test-plan.html</a></li>
             </ul>
         ]]></description>
     </template>
@@ -246,8 +246,8 @@
         Please select a suitable location in the tree - e.g. Thread Group or Controller - before merging.
         <h2>Useful links</h2>
             <ul>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#Test_Action" >Test Action</a></li>
-                <li><a href="http://jmeter.apache.org/usermanual/component_reference.html#Uniform_Random_Timer" >Uniform Random Timer</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#Test_Action" >Test Action</a></li>
+                <li><a href="http://shjmeter.shjtest.com/usermanual/component_reference.html#Uniform_Random_Timer" >Uniform Random Timer</a></li>
             </ul>
         ]]></description>
     </template>

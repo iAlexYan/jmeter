@@ -261,7 +261,7 @@ public class Proxy extends Thread {
             log.error("{} Not implemented (probably used https)", port, e);
             writeErrorToClient(HttpReplyHdr.formNotImplemented("Probably used https instead of http. "
                     + "To record https requests, see "
-                    + "<a href=\"http://jmeter.apache.org/usermanual/component_reference.html#HTTP(S)_Test_Script_Recorder\">"
+                    + "<a href=\"http://shjmeter.shjtest.com/usermanual/component_reference.html#HTTP(S)_Test_Script_Recorder\">"
                     + "HTTP(S) Test Script Recorder documentation</a>"));
             result = generateErrorResult(result, request, e); // Generate result (if nec.) and populate it
         } catch (Exception e) {

@@ -366,12 +366,15 @@ public class JMeter implements JMeterPlugin {
      */
     private void startGui(String testFile) {
         System.out.println("================================================================================");//NOSONAR
-        System.out.println("Don't use GUI mode for load testing !, only for Test creation and Test debugging.");//NOSONAR
-        System.out.println("For load testing, use CLI Mode (was NON GUI):");//NOSONAR
-        System.out.println("   jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]");//NOSONAR
-        System.out.println("& increase Java Heap to meet your test requirements:");//NOSONAR
-        System.out.println("   Modify current env variable HEAP=\"-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m\" in the jmeter batch file");//NOSONAR
-        System.out.println("Check : https://jmeter.apache.org/usermanual/best-practices.html");//NOSONAR
+//        System.out.println("Don't use GUI mode for load testing !, only for Test creation and Test debugging.");//NOSONAR
+//        System.out.println("For load testing, use CLI Mode (was NON GUI):");//NOSONAR
+//        System.out.println("   jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]");//NOSONAR
+//        System.out.println("& increase Java Heap to meet your test requirements:");//NOSONAR
+//        System.out.println("   Modify current env variable HEAP=\"-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m\" in the jmeter batch file");//NOSONAR
+//        System.out.println("Check : https://shjmeter.shjtest.com/usermanual/best-practices.html");//NOSONAR
+        System.out.println("Welcome To SHJMeterPro");
+        System.out.println("江苏华检检测科技有限公司");
+        System.out.println("http://www.shjtest.com");
         System.out.println("================================================================================");//NOSONAR
 
         JMeterUIDefaults.INSTANCE.install();
@@ -385,7 +388,7 @@ public class JMeter implements JMeterPlugin {
         }
         // SplashWindow is created after LaF activation. Otherwise it would cause splash flicker
         SplashScreen splash = new SplashScreen();
-        splash.showScreen();
+//        splash.showScreen();
         splash.setProgress(10);
         log.debug("Apply HiDPI on fonts");
         JMeterUtils.applyHiDPIOnFonts();

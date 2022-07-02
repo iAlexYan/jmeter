@@ -126,7 +126,7 @@ the default value.</p>
 
 <p>Skip to the next field, which is the Web Server's Server Name/IP. For the
 Test Plan that you are building, all HTTP requests will be sent to the same
-Web server, jmeter.apache.org.  Enter this domain name into the field.
+Web server, shjmeter.shjtest.com.  Enter this domain name into the field.
 This is the only field that we will specify a default, so leave the remaining
 fields with their default values.</p>
 
@@ -161,8 +161,8 @@ Cookie Manager, either from the Edit Menu, or from the right-click pop-up menu.<
 <section name="&sect-num;.4 Adding HTTP Requests" anchor="adding_requests">
 
 <p>In our Test Plan, we need to make two HTTP requests. The first one is for the
-JMeter home page (http://jmeter.apache.org/), and the second one is for the
-Changes page (http://jmeter.apache.org/changes.html).</p>
+JMeter home page (http://shjmeter.shjtest.com/), and the second one is for the
+Changes page (http://shjmeter.shjtest.com/changes.html).</p>
 
 <note>JMeter sends requests in the order that they appear in the tree.</note>
 

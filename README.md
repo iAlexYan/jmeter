@@ -1,6 +1,4 @@
-<h1 align="center"><img src="https://jmeter.apache.org/images/logo.svg" alt="Apache JMeter logo" /></h1>
-
-An Open Source Java application designed to measure performance and load test applications.
+An Java application designed to measure performance and load test applications.
 
 By The Apache Software Foundation
 
@@ -10,11 +8,11 @@ By The Apache Software Foundation
 [![Stack Overflow](https://img.shields.io/:stack%20overflow-jmeter-brightgreen.svg)](https://stackoverflow.com/questions/tagged/jmeter)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.apache.jmeter/ApacheJMeter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.apache.jmeter/ApacheJMeter)
 [![Javadocs](https://www.javadoc.io/badge/org.apache.jmeter/ApacheJMeter_core.svg)](https://www.javadoc.io/doc/org.apache.jmeter/ApacheJMeter_core)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/apache/jmeter.svg?style=social)](https://twitter.com/intent/tweet?text=Powerful%20load%20testing%20with%20Apache%20JMeter:&url=https://jmeter.apache.org)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/apache/jmeter.svg?style=social)](https://twitter.com/intent/tweet?text=Powerful%20load%20testing%20with%20Apache%20JMeter:&url=https://shjmeter.shjtest.com)
 
 ## What Is It?
 
-Apache JMeter can measure performance and load test static and dynamic web applications.
+SHJMeterPro can measure performance and load test static and dynamic web applications.
 
 It can be used to simulate a heavy load on a server, group of servers,
 network or object to test its strength or to analyze overall performance under different load types.
@@ -48,30 +46,6 @@ Ability to load and performance test many applications/server/protocol types:
 Fully featured Test IDE that allows fast Test Plan **recording**
  (from Browsers or native applications), **building** and **debugging**.
 
-### Command Line
-
-[Command-line mode (Non GUI / headless mode)](https://jmeter.apache.org/usermanual/get-started.html#non_gui)
-to load test from any Java compatible OS (Linux, Windows, Mac OSX, ...)
-
-### Reporting
-
-A complete and ready to present [dynamic HTML report](https://jmeter.apache.org/usermanual/generating-dashboard.html)
-
-![Dashboard screenshot](https://raw.githubusercontent.com/apache/jmeter/master/xdocs/images/screenshots/dashboard/response_time_percentiles_over_time.png)
-
-[Live reporting](https://jmeter.apache.org/usermanual/realtime-results.html)
-into 3rd party databases like InfluxDB or Graphite
-
-![Live report](https://raw.githubusercontent.com/apache/jmeter/master/xdocs/images/screenshots/grafana_dashboard.png)
-
-### Correlation
-
-Easy correlation through ability to extract data from most popular response formats,
-[HTML](https://jmeter.apache.org/usermanual/component_reference.html#CSS/JQuery_Extractor),
-[JSON](https://jmeter.apache.org/usermanual/component_reference.html#JSON_Extractor),
-[XML](https://jmeter.apache.org/usermanual/component_reference.html#XPath_Extractor) or
-[any textual format](https://jmeter.apache.org/usermanual/component_reference.html#Regular_Expression_Extractor)
-
 ### Highly Extensible Core
 
 - Pluggable Samplers allow unlimited testing capabilities.
@@ -81,19 +55,15 @@ Easy correlation through ability to extract data from most popular response form
 - Functions can be used to provide dynamic input to a test or provide data manipulation.
 - Easy Continuous Integration via 3rd party Open Source libraries for Maven, Gradle and Jenkins.
 
-## The Latest Version
-
-Details of the latest version can be found on the
-[JMeter Apache Project web site](https://jmeter.apache.org/)
 
 ## Requirements
 
-The following requirements exist for running Apache JMeter:
+The following requirements exist for running SHJMeterPro:
 
 - Java Interpreter:
 
   A fully compliant Java 8 Runtime Environment is required
-  for Apache JMeter to execute. A JDK with `keytool` utility is better suited
+  for SHJMeterPro to execute. A JDK with `keytool` utility is better suited
   for Recording HTTPS websites.
 
 - Optional jars:
@@ -109,7 +79,7 @@ The following requirements exist for running Apache JMeter:
 
   A Java compiler is not needed since the distribution includes a
   precompiled Java binary archive.
-  > **Note** that a compiler is required to build plugins for Apache JMeter.
+  > **Note** that a compiler is required to build plugins for SHJMeterPro.
 
 ## Installation Instructions
 
@@ -138,10 +108,6 @@ a JMX file onto:
 The documentation available as of the date of this release is
 also included, in HTML format, in the [printable_docs](printable_docs) directory,
 and it may be browsed starting from the file called [index.html](printable_docs/index.html).
-
-## Reporting a bug/enhancement
-
-See [Issue Tracking](https://jmeter.apache.org/issues.html).
 
 ## Build instructions
 
@@ -208,18 +174,6 @@ Alternatively, you could get Gradle to start the GUI:
 ./gradlew runGui
 ```
 
-## Developer Information
-
-Building and contributing is explained in details at
-[building JMeter](https://jmeter.apache.org/building.html)
-and [CONTRIBUTING.md](CONTRIBUTING.md). More information on the tasks available for
-building JMeter with Gradle is available in [gradle.md](gradle.md).
-
-The code can be obtained from:
-
-- https://github.com/apache/jmeter
-- https://gitbox.apache.org/repos/asf/jmeter.git
-
 ## Licensing and Legal Information
 
 For legal and licensing information, please see the following files:
@@ -251,18 +205,18 @@ code and source code.
 The following provides more details on the included software that
 may be subject to export controls on cryptographic software:
 
-Apache JMeter interfaces with the
+SHJMeterPro interfaces with the
 Java Secure Socket Extension (JSSE) API to provide
 
 - HTTPS support
 
-Apache JMeter interfaces (via Apache HttpClient4) with the
+SHJMeterPro interfaces (via Apache HttpClient4) with the
 Java Cryptography Extension (JCE) API to provide
 
 - NTLM authentication
 
-Apache JMeter does not include any implementation of JSSE or JCE.
+SHJMeterPro does not include any implementation of JSSE or JCE.
 
 ## Thanks
 
-**Thank you for using Apache JMeter.**
+**Thank you for using SHJMeterPro.**

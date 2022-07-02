@@ -270,7 +270,7 @@ public class KeyToolUtils {
      *
      * @param keystore the keystore to use
      * @param password the password to use for the keystore and keys
-     * @param host the host, e.g. jmeter.apache.org or *.apache.org; also used as the alias
+     * @param host the host, e.g. shjmeter.shjtest.com or *.apache.org; also used as the alias
      * @param validity the validity period for the generated keypair
      *
      * @throws IOException if keytool was not configured or running keytool application failed

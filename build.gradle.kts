@@ -184,10 +184,10 @@ sonarqube {
         property("sonar.host.url", System.getenv()["SONAR_HOST_URL"] ?: "http://localhost:9000")
         property("sonar.login", System.getenv()["SONAR_LOGIN"] ?: "")
         property("sonar.password", System.getenv()["SONAR_PASSWORD"] ?: "")
-        property("sonar.links.homepage", "https://jmeter.apache.org")
+        property("sonar.links.homepage", "https://shjmeter.shjtest.com")
         property("sonar.links.ci", "https://builds.apache.org/job/JMeter-trunk/")
-        property("sonar.links.scm", "https://jmeter.apache.org/svnindex.html")
-        property("sonar.links.issue", "https://jmeter.apache.org/issues.html")
+        property("sonar.links.scm", "https://shjmeter.shjtest.com/svnindex.html")
+        property("sonar.links.issue", "https://shjmeter.shjtest.com/issues.html")
     }
 }
 
@@ -541,9 +541,9 @@ allprojects {
             withType<Jar>().configureEach {
                 manifest {
                     attributes["Bundle-License"] = "Apache-2.0"
-                    attributes["Specification-Title"] = "Apache JMeter"
-                    attributes["Specification-Vendor"] = "Apache Software Foundation"
-                    attributes["Implementation-Vendor"] = "Apache Software Foundation"
+                    attributes["Specification-Title"] = "SHJMeterPro"
+                    attributes["Specification-Vendor"] = "SHJTest"
+                    attributes["Implementation-Vendor"] = "SHJTest"
                     attributes["Implementation-Vendor-Id"] = "org.apache"
                     attributes["Implementation-Version"] = rootProject.version
                 }
@@ -596,7 +596,7 @@ allprojects {
                     header = "<b>Apache JMeter</b>"
                     addStringOption("source", "8")
                     bottom =
-                        "Copyright © 1998-$lastEditYear Apache Software Foundation. All Rights Reserved."
+                        "Copyright © 2020-$lastEditYear SHJTest. All Rights Reserved."
                     if (JavaVersion.current() >= JavaVersion.VERSION_1_9) {
                         addBooleanOption("html5", true)
                         links("https://docs.oracle.com/javase/9/docs/api/")

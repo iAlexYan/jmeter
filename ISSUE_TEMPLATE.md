@@ -11,5 +11,5 @@
 
 Issue are related to bug or enhancements, it is not the right place to ask questions about usage, for the latter:
 
-- Read the [User manual](https://jmeter.apache.org/usermanual/index.html) and/or [Reference documentation](https://jmeter.apache.org/usermanual/component_reference.html)
-- Ask questions on the [user mailing list](https://jmeter.apache.org/mail2.html). *Note you need to subscribe first*
+- Read the [User manual](https://shjmeter.shjtest.com/usermanual/index.html) and/or [Reference documentation](https://shjmeter.shjtest.com/usermanual/component_reference.html)
+- Ask questions on the [user mailing list](https://shjmeter.shjtest.com/mail2.html). *Note you need to subscribe first*

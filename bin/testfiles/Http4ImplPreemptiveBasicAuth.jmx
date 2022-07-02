@@ -21,7 +21,7 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">jmeter.apache.org</stringProp>
+        <stringProp name="HTTPSampler.domain">shjmeter.shjtest.com</stringProp>
         <stringProp name="HTTPSampler.port"></stringProp>
         <stringProp name="HTTPSampler.protocol">https</stringProp>
         <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -253,7 +253,7 @@
         <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
           <collectionProp name="AuthManager.auth_list">
             <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://jmeter.apache.org/</stringProp>
+              <stringProp name="Authorization.url">https://shjmeter.shjtest.com/</stringProp>
               <stringProp name="Authorization.username">${login}</stringProp>
               <stringProp name="Authorization.password">${password}</stringProp>
               <stringProp name="Authorization.domain"></stringProp>
@@ -324,7 +324,7 @@
         <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
           <collectionProp name="AuthManager.auth_list">
             <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://jmeter.apache.org/</stringProp>
+              <stringProp name="Authorization.url">https://shjmeter.shjtest.com/</stringProp>
               <stringProp name="Authorization.username">${login}</stringProp>
               <stringProp name="Authorization.password">${password}</stringProp>
               <stringProp name="Authorization.domain"></stringProp>
@@ -387,7 +387,7 @@ if(mustHaveAuthHeader) {
 	if(requestHeaders.contains(&quot;Authorization&quot;)) {
 		AssertionResult.setFailure(true);
 		AssertionResult.setFailureMessage(&quot;Request has authorization header while it shouldn&apos;t have any:&quot;+requestHeaders);
-	} 
+	}
 }
 </stringProp>
         <stringProp name="scriptLanguage">groovy</stringProp>

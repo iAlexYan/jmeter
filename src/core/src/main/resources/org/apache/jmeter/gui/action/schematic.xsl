@@ -17,7 +17,7 @@
   -->
 
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:jmeter="http://jmeter.apache.org/"
+    xmlns:jmeter="http://shjmeter.shjtest.com/"
 >
 
 <xsl:strip-space elements="*"/>

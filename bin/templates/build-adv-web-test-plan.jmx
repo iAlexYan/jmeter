@@ -37,7 +37,7 @@
             <stringProp name="Argument.name">host</stringProp>
             <stringProp name="Argument.value">site.example</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">Change this value to jmeter.apache.org</stringProp>
+            <stringProp name="Argument.desc">Change this value to shjmeter.shjtest.com</stringProp>
           </elementProp>
           <elementProp name="bugzilla_host" elementType="Argument">
             <stringProp name="Argument.name">bugzilla_host</stringProp>

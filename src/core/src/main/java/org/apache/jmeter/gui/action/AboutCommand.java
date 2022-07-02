@@ -102,7 +102,7 @@ public class AboutCommand extends AbstractAction {
         if (about != null) {
             return about;
         }
-        about = new EscapeDialog(mainFrame, "About Apache JMeter", false);
+        about = new EscapeDialog(mainFrame, "About SHJMeterPro", false);
         about.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -112,8 +112,8 @@ public class AboutCommand extends AbstractAction {
 
         JLabel copyright = new JLabel(JMeterUtils.getJMeterCopyright(), SwingConstants.CENTER);
         JLabel rights = new JLabel("All Rights Reserved.", SwingConstants.CENTER);
-        JLabel version = new JLabel("Apache JMeter Version " + JMeterUtils.getJMeterVersion(), SwingConstants.CENTER);
-        JLabel releaseNotes = new JLabel("<html><a href=\"https://jmeter.apache.org/changes.html\">Release notes</a></html>", SwingConstants.CENTER);
+        JLabel version = new JLabel("SHJMeterPro Version " + JMeterUtils.getJMeterVersion(), SwingConstants.CENTER);
+        JLabel releaseNotes = new JLabel("<html><a href=\"https://shjmeter.shjtest.com/changes.html\">Release notes</a></html>", SwingConstants.CENTER);
         releaseNotes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         releaseNotes.addMouseListener(new MouseAdapter() {
             @Override
@@ -131,7 +131,7 @@ public class AboutCommand extends AbstractAction {
         infos.add(copyright);
         infos.add(rights);
         infos.add(version);
-        infos.add(releaseNotes);
+//        infos.add(releaseNotes);
         Container panel = about.getContentPane();
         panel.setLayout(new BorderLayout());
         panel.add(SplashScreen.loadLogo(), BorderLayout.NORTH);

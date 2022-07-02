@@ -643,7 +643,8 @@ which might be needed for use case or when certain drivers don't support timeout
 
 <links>
         <link href="build-db-test-plan.html">Building a Database Test Plan</link>
-        <complink name="JDBC Connection Configuration"/>
+        <!--<complink name="JDBC Connection Configuration"/>-->
+        <complink name="JDBC协议连接配置"/>
 </links>
 <note>Current Versions of JMeter use UTF-8 as the character encoding. Previously the platform default was used.</note>
 <note>Ensure Variable Name is unique across Test Plan.</note>
@@ -1989,7 +1990,8 @@ MongoDB Script is more suitable for functional testing or test setup (setup/tear
     <note>It is strongly advised to use query parameters, allowing the database to cache and reuse execution plans.</note>
 
     <links>
-        <complink name="Bolt Connection Configuration"/>
+        <!--<complink name="Bolt Connection Configuration"/>-->
+        <complink name="Bolt协议连接配置"/>
     </links>
 </component>
 

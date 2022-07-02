@@ -105,7 +105,7 @@
 	<table width="100%">
 		<tr>
 			<td align="left">Date report: <xsl:value-of select="$dateReport" /></td>
-			<td align="right">Designed for use with <a href="http://jmeter.apache.org/">JMeter</a> and <a href="http://ant.apache.org">Ant</a>.</td>
+			<td align="right">Designed for use with <a href="http://shjmeter.shjtest.com/">JMeter</a> and <a href="http://ant.apache.org">Ant</a>.</td>
 		</tr>
 	</table>
 	<hr size="1" />

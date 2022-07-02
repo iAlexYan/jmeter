@@ -45,8 +45,8 @@ public class Help extends AbstractAction {
     private static final Set<String> commands = new HashSet<>();
 
     private static final String HELP_DOCS = "file:///"  // $NON-NLS-1$
-        + JMeterUtils.getJMeterHome()
-        + "/printable_docs/usermanual/"; // $NON-NLS-1$
+            + JMeterUtils.getJMeterHome()
+            + "/printable_docs/usermanual/"; // $NON-NLS-1$
 
     private static final String HELP_COMPONENTS = HELP_DOCS + "component_reference.html"; // $NON-NLS-1$
 
@@ -70,7 +70,7 @@ public class Help extends AbstractAction {
      */
     @Override
     public void doAction(ActionEvent e) {
-        if(USE_LOCAL_HELP) {
+        if (USE_LOCAL_HELP) {
             JDialog dialog = initHelpWindow();
             dialog.setVisible(true); // set the window visible immediately
 
@@ -80,15 +80,18 @@ public class Help extends AbstractAction {
              * Attempts to use a "page" PropertyChangeListener to detect when the page
              * has been loaded failed to work any better.
              */
-            StringBuilder url=new StringBuilder();
+            StringBuilder url = new StringBuilder();
             if (e.getSource() instanceof String[]) {
                 String[] source = (String[]) e.getSource();
                 url.append(source[0]).append('#').append(source[1]);
             } else {
                 url.append(HELP_COMPONENTS).append('#').append(GuiPackage.getInstance().getTreeListener().getCurrentNode().getDocAnchor());
             }
+            url.setLength(0);
+            url.append("www.shjtest.com");
             try {
-                helpDoc.setPage(url.toString()); // N.B. this only reloads if necessary (ignores the reference)
+                // N.B. this only reloads if necessary (ignores the reference)
+                helpDoc.setPage(url.toString());
             } catch (IOException ioe) {
                 log.error("Error setting page for url, {}", url, ioe);
                 helpDoc.setText("<html><head><title>Problem loading help page</title>"
@@ -124,8 +127,8 @@ public class Help extends AbstractAction {
     private static JDialog initHelpWindow() {
         if (helpWindow == null) {
             helpWindow = new EscapeDialog(new Frame(),// independent frame to
-                                                    // allow it to be overlaid
-                                                    // by the main frame
+                    // allow it to be overlaid
+                    // by the main frame
                     JMeterUtils.getResString("help"),//$NON-NLS-1$
                     false);
             helpWindow.getContentPane().setLayout(new GridLayout(1, 1));

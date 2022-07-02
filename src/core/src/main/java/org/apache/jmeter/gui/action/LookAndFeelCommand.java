@@ -81,7 +81,7 @@ public class LookAndFeelCommand extends AbstractAction {
         }
 
         private static MenuItem ofDarklafTheme(Theme theme) {
-            return new MenuItem("Darklaf - " + theme.getName(),
+            return new MenuItem("深色 - " + theme.getName(),
                     JMeterMenuBar.DARKLAF_LAF_CLASS + ":" + theme.getThemeClass().getName(),
                     JMeterMenuBar.DARKLAF_LAF_CLASS,
                     theme);

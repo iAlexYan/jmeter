@@ -468,7 +468,7 @@ val previewSite by tasks.registering(Sync::class) {
 }
 
 val distributionGroup = "distribution"
-val baseFolder = "apache-jmeter-${rootProject.version}"
+val baseFolder = "shjmeterpro-${rootProject.version}"
 
 fun CopySpec.javadocs() = from(javadocAggregate)
 

@@ -186,8 +186,8 @@ subprojects {
                     }
                     name.set("Apache JMeter ${project.name.capitalize()}")
                     description.set(project.description)
-                    inceptionYear.set("1998")
-                    url.set("http://jmeter.apache.org/")
+                    inceptionYear.set("2020")
+                    url.set("http://shjmeter.shjtest.com/")
                     licenses {
                         license {
                             name.set("The Apache License, Version 2.0")

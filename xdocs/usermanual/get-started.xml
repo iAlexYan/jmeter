@@ -74,7 +74,7 @@ Once your Load Test is finished, you can use the HTML report to analyze your loa
 
 <subsection name="&sect-num;.0.4 Let's start" anchor="lets_start">
 <p>The easiest way to begin using JMeter is to first
-<a href="http://jmeter.apache.org/download_jmeter.cgi">download the latest production release</a> and install it.
+<a href="http://shjmeter.shjtest.com/download_jmeter.cgi">download the latest production release</a> and install it.
 The release contains all of the files you need to build and run most types of tests,
 e.g. Web (HTTP/HTTPS), FTP, JDBC, LDAP, Java, JUnit and more.</p>
 <p>If you want to perform JDBC testing,
@@ -206,7 +206,7 @@ See the <a href="#classpath">JMeter Classpath</a> section for more details on in
 
 <section name="&sect-num;.3 Installation" anchor="install">
 
-<p>We recommend that most users run the <a href="http://jmeter.apache.org/download_jmeter.cgi">latest release</a>.</p>
+<p>We recommend that most users run the <a href="http://shjmeter.shjtest.com/download_jmeter.cgi">latest release</a>.</p>
 <p>To install a release build, simply unzip the zip/tar file into the directory
 where you want JMeter to be installed.  Provided that you have a JRE/JDK correctly installed
 and the <code>JAVA_HOME</code> environment variable set, there is nothing more for you to do.</p>

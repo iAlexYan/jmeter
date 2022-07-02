@@ -848,11 +848,11 @@ public class ParseCurlCommandAction extends AbstractAction implements MenuCreato
         }
         if (request.getNoproxy()!=null) {
             commentText.append("Please configure noproxy list in terminal and restart JMeter. ");
-            commentText.append("Look: https://jmeter.apache.org/usermanual/get-started.html#proxy_server");
+            commentText.append("Look: https://shjmeter.shjtest.com/usermanual/get-started.html#proxy_server");
         }
         if (!request.getCaCert().isEmpty()) {
             commentText.append("Please configure the SSL file with CA certificates in 'SSL configuration' of 'system.properties(49 line)'. ");
-            commentText.append("Look: https://jmeter.apache.org/usermanual/properties_reference.html#ssl_config");
+            commentText.append("Look: https://shjmeter.shjtest.com/usermanual/properties_reference.html#ssl_config");
         }
         return commentText.toString();
     }

@@ -22,12 +22,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import org.apache.jmeter.util.JMeterUtils;
@@ -38,6 +33,7 @@ import com.github.weisj.darklaf.icons.ThemedSVGIcon;
 
 /**
  * Splash Screen
+ *
  * @since 3.2
  */
 public class SplashScreen extends JDialog {
@@ -65,6 +61,7 @@ public class SplashScreen extends JDialog {
         logo.setBorder(new EmptyBorder(10, 10, 10, 10));
         URI svgUri = null;
         String svgResourcePath = "/org/apache/jmeter/images/logo.svg";
+//        String svgResourcePath = "/org/apache/jmeter/images/logo.png";
         try {
             URL svgUrl = JMeterUtils.class.getResource(svgResourcePath);
             if (svgUrl != null) {
@@ -76,6 +73,7 @@ public class SplashScreen extends JDialog {
 
         if (svgUri != null) {
             Icon icon = new ThemedSVGIcon(svgUri, 521, 177);
+//            Icon icon = new ImageIcon(svgUri.getPath());
             logo.setIcon(icon);
         } else {
             // Fallback logo

@@ -1,4 +1,4 @@
-![Apache JMeter logo](https://jmeter.apache.org/images/logo.svg)
+![Apache JMeter logo](https://shjmeter.shjtest.com/images/logo.svg)
 
 ## Launching Apache JMeter from Eclipse
 

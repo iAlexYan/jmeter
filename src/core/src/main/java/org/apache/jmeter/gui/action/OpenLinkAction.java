@@ -48,11 +48,11 @@ public class OpenLinkAction extends AbstractAction {
 
     private static final Map<String, String> initLinkMap() {
         Map<String, String> map = new HashMap<>(5);
-        map.put(ActionNames.LINK_BUG_TRACKER, "https://jmeter.apache.org/issues.html");
-        map.put(ActionNames.LINK_COMP_REF, "https://jmeter.apache.org/usermanual/component_reference.html");
-        map.put(ActionNames.LINK_FUNC_REF, "https://jmeter.apache.org/usermanual/functions.html");
-        map.put(ActionNames.LINK_NIGHTLY_BUILD, "https://jmeter.apache.org/nightly.html");
-        map.put(ActionNames.LINK_RELEASE_NOTES, "https://jmeter.apache.org/changes.html");
+        map.put(ActionNames.LINK_BUG_TRACKER, "https://shjmeterpro.shjtest.com/issues.html");
+        map.put(ActionNames.LINK_COMP_REF, "http://www.shjtest.com");
+        map.put(ActionNames.LINK_FUNC_REF, "https://shjmeterpro.shjtest.com/usermanual/functions.html");
+        map.put(ActionNames.LINK_NIGHTLY_BUILD, "https://shjmeterpro.shjtest.com/nightly.html");
+        map.put(ActionNames.LINK_RELEASE_NOTES, "https://shjmeterpro.shjtest.com/changes.html");
         return map;
     }
     /**

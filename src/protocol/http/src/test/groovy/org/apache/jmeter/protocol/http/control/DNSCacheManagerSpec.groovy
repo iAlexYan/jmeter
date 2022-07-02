@@ -28,7 +28,7 @@ class DNSCacheManagerSpec extends Specification {
 
     private static final String[] VALID_DNS_SERVERS = ResolverConfig.getCurrentConfig().servers()
     private static final String INVALID_DNS_SERVER = "512.1.1.1"
-    private static final String VALID_HOSTNAME = "jmeter.apache.org"
+    private static final String VALID_HOSTNAME = "shjmeter.shjtest.com"
 
     private static final boolean localDNSResolverOK = {
         try {

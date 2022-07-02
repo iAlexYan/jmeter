@@ -24,7 +24,7 @@
 <document prev="jmeter_accesslog_sampler_step_by_step.html" id="$Id$">
 
 <properties>
-  <author email="dev@jmeter.apache.org">JMeter developers</author>
+  <author email="dev@shjmeter.shjtest.com">JMeter developers</author>
   <title>How to write a plugin for JMeter</title>
 </properties>
 
